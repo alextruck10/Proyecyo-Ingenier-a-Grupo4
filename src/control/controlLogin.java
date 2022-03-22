@@ -1,5 +1,5 @@
 package control;
-
+import java.util.*;
 import aplication.ficheros;
 import model.Usuario;
 public class controlLogin {
@@ -8,7 +8,13 @@ public class controlLogin {
 
 	private String passwordText;
 	
-	void comprobarLogin() {
+	public void comprobarLogin() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Email: ");
+		userNameText=sc.nextLine();
+		System.out.println("Password: ");
+		passwordText=sc.nextLine();
+		
 		ficheros files = new ficheros();
 		Usuario usuario = files.IniciarSesion(userNameText, passwordText);
 		if(usuario!=null) {
