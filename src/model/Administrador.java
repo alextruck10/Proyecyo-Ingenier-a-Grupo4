@@ -1,6 +1,6 @@
 package model;
 
-import application.ficheros;
+import aplication.ficheros;
 
 public class Administrador extends Usuario {
 
@@ -9,7 +9,7 @@ public class Administrador extends Usuario {
 		super(userId, email, password, userType, name, lastnames, birthdate, genre, active);
 	}
 
-	public void borrarUsuario(String dni) {
+	/*public void borrarUsuario(String dni) {
 		
 		ficheros files = new ficheros();
 		Usuario persona = files.buscarUsuarioId(dni);

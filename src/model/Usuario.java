@@ -105,5 +105,11 @@ public class Usuario {
 	public void setActive(Boolean active) {
 		this.active = active;
 	}
+	@Override
+	public String toString() {
+		return "Usuario [userId=" + userId + ", email=" + email + ", password=" + password + ", userType=" + userType
+				+ ", name=" + name + ", lastnames=" + lastnames + ", birthday=" + birthday + ", genre=" + genre
+				+ ", active=" + active + "]";
+	}
 
 }
