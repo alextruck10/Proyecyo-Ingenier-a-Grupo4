@@ -8,6 +8,9 @@ public class controlLogin {
 
 	private String passwordText;
 	
+	
+	private String opcion;
+	
 	public void comprobarLogin() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Email: ");
@@ -24,10 +27,25 @@ public class controlLogin {
 				System.out.println("Es un admin");
 				break;
 			case "jugador":
-				System.out.println("Es un jugador");
-
+				System.out.println("Bienvenido, jugador.");
+				Scanner teclado=new Scanner(System.in);
+				
+				System.out.println("Elige una opcion:");
+				opcion=teclado.next();
+				switch (opcion)
+				{
+				case "1":
+					System.out.println("Has elegido la opcion 1");
+					break;
+				case "2":
+					System.out.println("Has elegido la opcion 2");
+					break;
+				default:
+					System.out.println("ERROR");
+					break;
+				}
 				break;
-			
+				
 			}
 		}else {
 			System.out.println("ERROR");
