@@ -31,6 +31,9 @@ public class controlLogin {
 				break;
 			case "jugador":
 				System.out.println("Bienvenido, jugador.");
+				controlJugador controlJugador1 = new controlJugador();
+				controlJugador1.setUsuario(files.leerJugador("src/files/jugadores/" + usuario.getUserId() + ".jsonl"));
+				
 				Scanner teclado=new Scanner(System.in);
 				
 				System.out.println("Elige una opcion:");
