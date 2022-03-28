@@ -25,6 +25,9 @@ public class controlLogin {
 			switch (rol) {
 			case "administrador":
 				System.out.println("Es un admin");
+				controlAdmin controlAdmin1 = new controlAdmin();
+				controlAdmin1.setUsuario(files.leerAdministrador("src/files/administradores/" + usuario.getUserId() + ".jsonl"));
+				System.out.println();
 				break;
 			case "jugador":
 				System.out.println("Bienvenido, jugador.");
