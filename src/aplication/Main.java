@@ -6,9 +6,8 @@ import control.controlLogin;
 public class Main{
 	
 	public static void main(String[] args) {
-		System.out.println("xd");
 		controlLogin control = new controlLogin();
 		control.comprobarLogin();
-		System.out.println("xd2");
+		System.out.println("Se ha realizado con éxito.");
 }
 }

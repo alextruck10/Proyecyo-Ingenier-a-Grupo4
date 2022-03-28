@@ -15,7 +15,6 @@ public class controlAdmin {
 	private Administrador user;
 
 	
-	
     public void setUsuario(Administrador u) {
     	user = u;
     	
