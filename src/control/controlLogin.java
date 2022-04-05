@@ -1,9 +1,12 @@
 package control;
 import java.util.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+
 import aplication.ficheros;
 import model.Usuario;
 public class controlLogin {
-	
+	 
 	private String userNameText;
 
 	private String passwordText;
@@ -20,7 +23,23 @@ public class controlLogin {
 	private String pistolas;
 	private String rachasDePuntos;
 	
+
+	
+
 	public void comprobarLogin() {
+		try
+		{
+		File myObj = new File("recursos/arma.txt"); // Specify the filename
+		 Scanner myReader = new Scanner(myObj);
+	     while (myReader.hasNextLine()) {
+	       String data = myReader.nextLine();
+	       System.out.println(data);
+	     }
+	     myReader.close();
+		 } catch (FileNotFoundException e) {
+		      System.out.println("An error occurred.");
+		      e.printStackTrace();
+		    }
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Email: ");
 		userNameText=sc.nextLine();
@@ -43,7 +62,7 @@ public class controlLogin {
 				System.out.println("1.Crear usuario\n");
 				System.out.println("2.Editar usuario\n");
 				System.out.println("3.Eliminar usuario\n");
-				System.out.println("4.Revisar y modificar estadísticas\n");
+				System.out.println("4.Revisar y modificar estadï¿½sticas\n");
 				System.out.println("5.Suspender usuario\n");
 
 
@@ -60,7 +79,7 @@ public class controlLogin {
 					System.out.println("Eliminar usuario");
 					break;
 				case "4":
-					System.out.println("Revisar y modificar estadísticas");
+					System.out.println("Revisar y modificar estadï¿½sticas");
 					break;
 				case "5":
 					System.out.println("Suspender usuario");
@@ -102,7 +121,7 @@ public class controlLogin {
 					System.out.println("2.Dominio\n");
 					System.out.println("3.Baja Confirmada\n");
 					System.out.println("4.Juego de Armas\n");
-					System.out.println("5.Demolición\n");
+					System.out.println("5.Demoliciï¿½n\n");
 					System.out.println("6.Punto Caliente\n");
 					
 					modosDeJuego=teclado2.next();
@@ -121,7 +140,7 @@ public class controlLogin {
 						System.out.println("Juego de Armas");
 						break;
 					case "5":
-						System.out.println("Demolición");
+						System.out.println("Demoliciï¿½n");
 						break;
 					case "6":
 						System.out.println("Punto Caliente");
