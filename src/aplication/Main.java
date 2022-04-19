@@ -8,6 +8,6 @@ public class Main{
 	public static void main(String[] args) {
 		controlLogin control = new controlLogin();
 		control.comprobarLogin();
-		System.out.println("Se ha realizado con éxito.");
+		
 }
 }
