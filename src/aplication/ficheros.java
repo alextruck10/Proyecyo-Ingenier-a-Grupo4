@@ -12,9 +12,11 @@ import java.util.ArrayList;
 import com.google.gson.Gson;
 
 import model.Administrador;
+import model.Armas;
 import model.Jugador;
 import model.Enlace;
 import model.Mensaje;
+import model.Modos;
 import model.Sesion;
 import model.Usuario;
 
@@ -157,7 +159,61 @@ public class ficheros {
 			e.printStackTrace();
 		}
 	}
-	//AQUI IRIA EL ESCRIBIR ENLACE, ESCRIBIR CHAR, LEER CHAT, ELIMINAR USUARIO LOGIN
 	
+	
+	//AQUI IRIA EL ESCRIBIR ENLACE, ESCRIBIR CHAT, LEER CHAT, ELIMINAR USUARIO LOGIN
+	
+	//ARMAS
 
+		
+		public Armas buscarArmas(String dni) {
+			Gson gson = new Gson();
+			Armas armas = null;
+			Boolean encontrado = false;
+			try {
+				BufferedReader br = new BufferedReader(new FileReader("src/files/armas.jsonl"));
+				String linea;
+				
+				while ((linea = br.readLine()) != null && !encontrado) {
+					try {
+						armas = gson.fromJson(linea, Armas.class);
+						if (armas.getUserId().equalsIgnoreCase(dni)) {
+							encontrado = true;
+						}
+					}catch (Exception e) {}
+				}
+				br.close();
+			} catch (IOException ex) {
+				System.out.println(ex.getMessage());
+			}
+			if(encontrado) {
+				return armas;
+			}else {
+				return null;
+			}
+		}
+		
+		/*public Armas datosArmas(String userId) {
+			
+			Armas armas = buscarArmas(userId);
+
+			if (armas != null && armas.getUserId().equals(userId)) {
+				return leerDatosArmas(armas);
+			} else {
+				return null;
+			}
+		}*/
+		
+		public Armas leerDatosArmas(String ruta) {
+			Armas armas = null;
+			try {
+				Gson gson = new Gson();
+				BufferedReader br = new BufferedReader(new FileReader(ruta));
+				armas = gson.fromJson(br.readLine(), Armas.class);
+				br.close();
+			} catch (IOException ex) {
+				System.out.println(ex.getMessage());
+			}
+			return armas;
+		}
 }
