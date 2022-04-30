@@ -9,10 +9,11 @@ public class Administrador extends Usuario {
 		super(userId, email, password, userType, name, lastnames, birthdate, genre, active);
 	}
 
-	/*public void borrarUsuario(String dni) {
+	public void borrarUsuario(String dni) {
 		
 		ficheros files = new ficheros();
 		Usuario persona = files.buscarUsuarioId(dni);
+		System.out.println("xdddd");
 		if(persona!=null) {
 			files.eliminarUsuarioLogin(persona.getEmail());
 			
@@ -23,12 +24,10 @@ public class Administrador extends Usuario {
 				case "administrador":
 					files.escribirPersona(persona, "src/files/administradores/" + persona.getUserId() + ".jsonl");
 					break;
-				case "entrenador":
-					files.escribirPersona(persona, "src/files/entrenadores/" + persona.getUserId() + ".jsonl");
+				case "jugador":
+					files.escribirPersona(persona, "src/files/jugadores/" + persona.getUserId() + ".jsonl");
 					break;
-				case "deportista":
-					files.escribirPersona(persona, "src/files/deportistas/" + persona.getUserId() + ".jsonl");
-					break;
+				
 			}
 			System.out.println("usuario borrado");
 		}else {
@@ -36,8 +35,17 @@ public class Administrador extends Usuario {
 		}
 		
 	}
+
+	@Override
+	public String toString() {
+		return "Administrador [getUserId()=" + getUserId() + ", getEmail()=" + getEmail() + ", getPassword()="
+				+ getPassword() + ", getUserType()=" + getUserType() + ", getName()=" + getName() + ", getLastnames()="
+				+ getLastnames() + ", getBirthday()=" + getBirthday() + ", getGenre()=" + getGenre() + ", getActive()="
+				+ getActive() + ", toString()=" + super.toString() + ", getClass()=" + getClass() + ", hashCode()="
+				+ hashCode() + "]";
+	}
 	
-	public void modificarUsuario (String dni) {
+	/*public void modificarUsuario (String dni) {
 		ficheros files = new ficheros();
 		Usuario persona = files.buscarUsuarioId(dni);
 		System.out.println("modificar");
@@ -48,19 +56,16 @@ public class Administrador extends Usuario {
 			switch (persona.getUserType()) {
 				case "administrador":
 					//files.escribirPersona(persona, "src/files/administradores/" + persona.getUserId() + ".jsonl");
-					System.out.println("a");
+					System.out.println("Administrador");
 					System.out.println("USUARIO ESCOGIDO: " + persona.getName());
 					
 					break;
-				case "entrenador":
+				case "jugador":
 					//files.escribirPersona(persona, "src/files/entrenadores/" + persona.getUserId() + ".jsonl");
-					System.out.println("e");
+					System.out.println("Jugador");
 					System.out.println("USUARIO ESCOGIDO: " + persona.getName());
 					break;
-				case "deportista":
-					//files.escribirPersona(persona, "src/files/deportistas/" + persona.getUserId() + ".jsonl");
-					System.out.println("USUARIO ESCOGIDO: " + persona.getName());
-					break;
+				
 										
 			}
 						
@@ -111,14 +116,6 @@ public class Administrador extends Usuario {
 	}*/
 	
 
-	@Override
-	public String toString() {
-		return "Administrador [getUserId()=" + getUserId() + ", getEmail()=" + getEmail() + ", getPassword()="
-				+ getPassword() + ", getUserType()=" + getUserType() + ", getName()=" + getName() + ", getLastnames()="
-				+ getLastnames() + ", getBirthday()=" + getBirthday() + ", getGenre()=" + getGenre()
-				+ ", getActive()=" + getActive() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-				+ ", toString()=" + super.toString() + "]";
-	}
-	
+
 
 }

@@ -12,6 +12,7 @@ public class controlModificarEstadisticas {
 
 
 	void modificarEstadisticas() {
+		
 		System.out.println("¿De quién desea modificar las estadísticas?");
 		
 		Scanner sc = new Scanner(System.in);
@@ -22,8 +23,8 @@ public class controlModificarEstadisticas {
 		Armas armas = files.buscarArmas(idText);
 		
 		System.out.println(armas.toString());
-	}
-
+		
+		}
 	
 
 }
