@@ -24,7 +24,9 @@ public class controlAnadirUsuario {
 		switch (opcion)
 		{
 		case "1":
-			control2.AnadirJugador();
+			controlAnadirJugador controlAnadirJugador=new controlAnadirJugador();
+			controlAnadirJugador.AnadirJugador();
+			
 			break;
 		case "2":
 			System.out.println("Elegiste crear Administrador");

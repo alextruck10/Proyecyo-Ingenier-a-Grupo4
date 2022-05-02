@@ -7,8 +7,6 @@ import aplication.ficheros;
 import model.Administrador;
 
 
-
-
 public class controlBorrarUsuario {
 
 	private String idText;
@@ -22,7 +20,6 @@ public class controlBorrarUsuario {
 		idText=sc.nextLine();
 		System.out.println(idText);
 		
-		//System.out.println(user.toString());
 		user.borrarUsuario(idText);
 		//volverAdmin();
     	
@@ -40,7 +37,7 @@ public class controlBorrarUsuario {
     	
 	
 	public void setUser(Administrador user) {
-		this.user = user;
+		this.user=user;
 	}
 	
 	

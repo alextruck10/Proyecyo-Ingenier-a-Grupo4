@@ -7,6 +7,8 @@ import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
+
+import model.Administrador;
 import model.Jugador;
 
 public class controlAnadirJugador {
@@ -21,6 +23,8 @@ public class controlAnadirJugador {
 	private boolean active; 
 	private String opciongenero;
 	private String opcionactivo;
+	private Administrador user;
+	
 	public void AnadirJugador() throws IOException
 	{
 		System.out.println("Has elegido CREAR UN JUGADOR.");
@@ -42,8 +46,7 @@ public class controlAnadirJugador {
 		genre=sc.nextLine();
 		System.out.println("Usuario activo? (y/n)");
 		opcionactivo=sc.nextLine();
-		if (opcionactivo=="y")
-		{
+		if (opcionactivo=="y"){
 		active=true;
 		}
 		else if (opcionactivo=="n")
@@ -101,6 +104,9 @@ public class controlAnadirJugador {
          
         
 
+	}
+	public void setUsuario(Administrador user) {
+		this.user = user;		
 	}
 
 }
