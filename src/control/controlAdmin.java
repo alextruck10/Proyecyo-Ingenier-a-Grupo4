@@ -7,7 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+import control.*;
 import model.Administrador;
 import model.Usuario;
 
@@ -15,7 +15,7 @@ public class controlAdmin {
 	private String opcion;
 	private Administrador user;
 
-	void menuAdmin() {
+	void menuAdmin() throws IOException {
 		Scanner teclado=new Scanner(System.in);
 		System.out.println("********************************************************************");
 		System.out.println("TE HAS ADENTRADO EN EL SISTEMA DE TRIBUTESTATS\n");
@@ -23,27 +23,23 @@ public class controlAdmin {
 		System.out.println("1.Crear usuario\n");
 		System.out.println("2.Editar usuario\n");
 		System.out.println("3.Eliminar usuario\n");
-		System.out.println("4.Revisar y modificar estadísticas\n");
+		System.out.println("4.Revisar y modificar estadï¿½sticas\n");
 		System.out.println("5.Suspender usuario\n");
-		System.out.println("6.Cerrar sesión\n");
+		System.out.println("6.Cerrar sesiï¿½n\n");
 		opcion=teclado.next();
 		
 		switch(opcion) {
 		case "1":
 			controlAnadirUsuario controlAnadirUsuario1 = new controlAnadirUsuario();
-			controlAnadirUsuario1.setUser(user);
 			controlAnadirUsuario1.anadirUsuario();
 			break;
 		case "2":
 			controlModificarUsuario controlModificarUsuario1 = new controlModificarUsuario();
-			controlModificarUsuario1.setUser(user);
 			controlModificarUsuario1.modificarUsuario();
 			break;
 		case "3":
 			controlBorrarUsuario controlBorrarUsuario1 = new controlBorrarUsuario();
-			controlBorrarUsuario1.setUser(user);
 			controlBorrarUsuario1.borrarUser();
-
 			break;
 		case "4":
 			controlModificarEstadisticas controlModificarEstadisticas1 = new controlModificarEstadisticas();
@@ -51,7 +47,6 @@ public class controlAdmin {
 			break;
 		case "5":
 			controlSuspenderJugador controlSuspenderJugador1 = new controlSuspenderJugador();
-			controlSuspenderJugador1.setUser(user);
 			controlSuspenderJugador1.suspender();
 			break;
 		case "6":

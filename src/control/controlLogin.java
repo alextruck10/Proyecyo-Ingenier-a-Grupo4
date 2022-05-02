@@ -2,6 +2,7 @@ package control;
 import java.util.*;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import aplication.ficheros;
 import model.Usuario;
@@ -12,7 +13,7 @@ public class controlLogin {
 	private String passwordText;
 	
 
-	public void comprobarLogin() {
+	public void comprobarLogin() throws IOException {
 		try
 		{
 		File myObj = new File("recursos/arma.txt"); // Specify the filename

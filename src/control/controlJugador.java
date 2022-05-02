@@ -27,7 +27,7 @@ public class controlJugador {
 	
 	private Jugador user;
 	
-	void menuJugador() {
+	void menuJugador() throws IOException {
 		
 	Scanner teclado=new Scanner(System.in);
 	System.out.println("********************************************************************");
@@ -39,7 +39,7 @@ public class controlJugador {
 	System.out.println("3.Armas\n");
 	System.out.println("4.Rachas de puntos\n");
 	System.out.println("5.Ajustes\n");
-	System.out.println("6.Cerrar sesión\n");
+	System.out.println("6.Cerrar sesiï¿½n\n");
 	
 
 	opcion=teclado.next();
@@ -79,7 +79,7 @@ public class controlJugador {
 			System.out.println("Juego de Armas");
 			break;
 		case "5":
-			System.out.println("Demolición");
+			System.out.println("Demoliciï¿½n");
 			break;
 		case "6":
 			System.out.println("Punto Caliente");
@@ -122,7 +122,7 @@ public class controlJugador {
 			switch (fusiles) {
 			case "1":
 				System.out.println("AN-94");
-				System.out.println("Pulse la tecla P para volver atrás");
+				System.out.println("Pulse la tecla P para volver atrï¿½s");
 				Scanner teclado5 = new Scanner (System.in);
 				fusiles=teclado5.next();
 				if(fusiles.equalsIgnoreCase("P")) {
@@ -131,19 +131,19 @@ public class controlJugador {
 				break;
 			case "2":
 				System.out.println("M8A1");
-				System.out.println("Pulse la tecla P para volver atrás");
+				System.out.println("Pulse la tecla P para volver atrï¿½s");
 				break;
 			case "3":
 				System.out.println("MTAR");
-				System.out.println("Pulse la tecla P para volver atrás");
+				System.out.println("Pulse la tecla P para volver atrï¿½s");
 				break;
 			case "4":
 				System.out.println("SCAR-H");
-				System.out.println("Pulse la tecla P para volver atrás");
+				System.out.println("Pulse la tecla P para volver atrï¿½s");
 				break;
 			case "5":
 				System.out.println("FALL");
-				System.out.println("Pulse la tecla P para volver atrás");
+				System.out.println("Pulse la tecla P para volver atrï¿½s");
 				break;
 			}
 			break;
