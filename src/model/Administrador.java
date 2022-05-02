@@ -16,7 +16,9 @@ public class Administrador extends Usuario {
 		System.out.println("xdddd");
 		if(persona!=null) {
 			files.eliminarUsuarioLogin(persona.getEmail());
-			
+			files.eliminarUsuarioArmas(persona.getUserId());
+			files.eliminarUsuarioModos(persona.getUserId());
+
 			persona = files.leerUsuario(persona);
 			persona.setActive(false);
 			
