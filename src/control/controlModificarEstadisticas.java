@@ -3,12 +3,14 @@ package control;
 import java.util.Scanner;
 
 import aplication.ficheros;
+import model.Administrador;
 import model.Armas;
 import model.Usuario;
 
 public class controlModificarEstadisticas {
 	
 	private String idText;
+	private Administrador user;
 
 
 	void modificarEstadisticas() {
@@ -25,6 +27,10 @@ public class controlModificarEstadisticas {
 		System.out.println(armas.toString());
 		
 		}
+	
+	public void setUser(Administrador user) {
+		this.user = user;
+	}
 	
 
 }

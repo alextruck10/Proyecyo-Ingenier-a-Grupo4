@@ -47,6 +47,8 @@ public class controlAdmin {
 			break;
 		case "4":
 			controlModificarEstadisticas controlModificarEstadisticas1 = new controlModificarEstadisticas();
+			controlModificarEstadisticas1.setUser(user);
+			controlModificarEstadisticas1.modificarEstadisticas();
 
 			break;
 		case "5":
