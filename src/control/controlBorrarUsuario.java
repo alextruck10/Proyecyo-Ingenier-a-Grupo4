@@ -21,7 +21,8 @@ public class controlBorrarUsuario {
 		System.out.println(idText);
 		
 		user.borrarUsuario(idText);
-		//volverAdmin();
+		
+		volverAdmin();
     	
     	
     	

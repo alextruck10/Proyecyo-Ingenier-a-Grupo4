@@ -47,7 +47,7 @@ public class Administrador extends Usuario {
 				+ hashCode() + "]";
 	}
 	
-	/*public void modificarUsuario (String dni) {
+	public void modificarUsuario (String dni) {
 		ficheros files = new ficheros();
 		Usuario persona = files.buscarUsuarioId(dni);
 		System.out.println("modificar");
@@ -63,7 +63,7 @@ public class Administrador extends Usuario {
 					
 					break;
 				case "jugador":
-					//files.escribirPersona(persona, "src/files/entrenadores/" + persona.getUserId() + ".jsonl");
+					//files.escribirPersona(persona, "src/files/jugadores/" + persona.getUserId() + ".jsonl");
 					System.out.println("Jugador");
 					System.out.println("USUARIO ESCOGIDO: " + persona.getName());
 					break;
