@@ -3,19 +3,15 @@ package control;
 import java.util.Scanner;
 
 import aplication.ficheros;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 import model.Administrador;
 import model.Usuario;
 
 public class controlModificarUsuario {
 	
-	private String idText;
+	public static String idText="";
 	private Administrador user;
 
-	void modificarUsuario() {
+	void modificarUser() {
 		System.out.println("¿Qué usuario desea modificar?");
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Id del usuario: ");

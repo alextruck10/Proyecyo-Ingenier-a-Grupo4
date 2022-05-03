@@ -37,7 +37,7 @@ public class controlAdmin {
 		case "2":
 			controlModificarUsuario controlModificarUsuario1 = new controlModificarUsuario();
 			controlModificarUsuario1.setUser(user);
-			controlModificarUsuario1.modificarUsuario();
+			controlModificarUsuario1.modificarUser();
 			break;
 		case "3":
 			controlBorrarUsuario controlBorrarUsuario1 = new controlBorrarUsuario();
