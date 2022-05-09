@@ -23,9 +23,9 @@ public class controlAdmin {
 		System.out.println("1.Crear usuario\n");
 		System.out.println("2.Editar usuario\n");
 		System.out.println("3.Eliminar usuario\n");
-		System.out.println("4.Revisar y modificar estadï¿½sticas\n");
+		System.out.println("4.Revisar y modificar estadísticas\n");
 		System.out.println("5.Suspender usuario\n");
-		System.out.println("6.Cerrar sesiï¿½n\n");
+		System.out.println("6.Cerrar sesión\n");
 		opcion=teclado.next();
 		
 		switch(opcion) {

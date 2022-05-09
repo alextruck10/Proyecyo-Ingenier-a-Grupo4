@@ -178,9 +178,10 @@ public class ficheros {
 					persona = gson.fromJson(linea, Usuario.class);
 					if (!persona.getEmail().equalsIgnoreCase(email)) {
 						bw.append(gson.toJson(persona));
-						bw.flush();
+						//bw.flush();
 						bw.newLine();
 					}
+					
 				}
 				br.close();
 				bw.close();
@@ -190,6 +191,7 @@ public class ficheros {
 					File renombrar = new File("src/files/login.jsonl");
 					if (ficheroNuevo.renameTo(renombrar)) { // Aqui deberia renombrarlo al nombre original
 						System.out.println("fichero renombrado");
+						
 						return true;
 					} else {
 						System.out.println("error al renombrar fichero");
@@ -336,4 +338,20 @@ public class ficheros {
 			}
 			return armas;
 		}
+		
+		public void escribirArmas(Armas arma) {
+			System.out.println();
+			Gson gson = new Gson();
+			
+			try {
+				BufferedWriter bw = new BufferedWriter(new FileWriter("src/files/armas.jsonl", true));
+				bw.newLine();
+				bw.append(gson.toJson(arma));
+				bw.flush();
+				bw.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
 }
