@@ -82,8 +82,8 @@ public class controlAnadirJugador {
 
 
     	Usuario nuevo = new Usuario(userId, email, password, userType);
-    	Jugador nuevo2 = new Jugador (userId, email, password, userType, name, lastnames, birthday, genre, active);
     	Armas nuevas = new Armas(userId, totalKills, fusiles, subfusiles, ametralladoras, escopetas, franco, pistolas);
+    	Jugador nuevo2 = new Jugador (userId, email, password, userType, name, lastnames, birthday, genre, active);
     	
     	
     	System.out.println("El usuario que se va a anadir es: " + nuevo2.toString());
@@ -91,8 +91,9 @@ public class controlAnadirJugador {
     	
     	ficheros fichero = new ficheros();
     	fichero.escribirLogin(nuevo);
-    	fichero.escribirPersona(nuevo2, ruta);
     	fichero.escribirArmas(nuevas);
+    	fichero.escribirPersona(nuevo2, ruta);
+    	
 		
 	}
 	

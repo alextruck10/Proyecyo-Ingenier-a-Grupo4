@@ -326,7 +326,7 @@ public class ficheros {
 			}
 		}*/
 		
-		public Armas leerDatosArmas(String ruta) {
+		/*public Armas leerDatosArmas(String ruta) {
 			Armas armas = null;
 			try {
 				Gson gson = new Gson();
@@ -337,10 +337,10 @@ public class ficheros {
 				System.out.println(ex.getMessage());
 			}
 			return armas;
-		}
+		}*/
 		
 		public void escribirArmas(Armas arma) {
-			System.out.println();
+			
 			Gson gson = new Gson();
 			
 			try {

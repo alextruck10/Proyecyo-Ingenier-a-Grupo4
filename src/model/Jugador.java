@@ -10,5 +10,7 @@ public class Jugador extends Usuario{
         
     }
 	
+	
+	
 
 }
