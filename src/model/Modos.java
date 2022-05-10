@@ -8,9 +8,21 @@ public class Modos {
 	private int mododominiototal;
 	private int modocalientewins;
 	private int modocalientetotal;
+	
+	
+	
+	
+	
 	public Modos(String userId, int mododuelowins, int mododuelototal, int mododominiowins, int mododominiototal,
 			int modocalientewins, int modocalientetotal) {
-		
+		super();
+		this.userId = userId;
+		this.mododuelowins = mododuelowins;
+		this.mododuelototal = mododuelototal;
+		this.mododominiowins = mododominiowins;
+		this.mododominiototal = mododominiototal;
+		this.modocalientewins = modocalientewins;
+		this.modocalientetotal = modocalientetotal;
 	}
 	public String getUserId() {
 		return userId;

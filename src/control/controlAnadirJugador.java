@@ -12,6 +12,7 @@ import java.util.*;
 import aplication.ficheros;
 import model.Administrador;
 import model.Armas;
+import model.Modos;
 import model.Jugador;
 import model.Usuario;
 
@@ -37,6 +38,14 @@ public class controlAnadirJugador {
 	private int escopetas=0;
 	private int franco=0;
 	private int pistolas=0;
+	
+	private int mododuelowins=0;
+	private int mododuelototal=0;
+	private int mododominiowins=0;
+	private int mododominiototal=0;
+	private int modocalientewins=0;
+	private int modocalientetotal=0;
+	
 	
 
 
@@ -83,6 +92,7 @@ public class controlAnadirJugador {
 
     	Usuario nuevo = new Usuario(userId, email, password, userType);
     	Armas nuevas = new Armas(userId, totalKills, fusiles, subfusiles, ametralladoras, escopetas, franco, pistolas);
+    	Modos nuevos = new Modos(userId, mododuelowins, mododuelototal, mododominiowins, mododominiototal, modocalientewins, modocalientetotal);
     	Jugador nuevo2 = new Jugador (userId, email, password, userType, name, lastnames, birthday, genre, active);
     	
     	
@@ -92,6 +102,7 @@ public class controlAnadirJugador {
     	ficheros fichero = new ficheros();
     	fichero.escribirLogin(nuevo);
     	fichero.escribirArmas(nuevas);
+    	fichero.escribirModos(nuevos);
     	fichero.escribirPersona(nuevo2, ruta);
     	
 		

@@ -354,4 +354,19 @@ public class ficheros {
 			}
 		}
 		
+		public void escribirModos(Modos modo) {
+			
+			Gson gson = new Gson();
+			
+			try {
+				BufferedWriter bw = new BufferedWriter(new FileWriter("src/files/modos.jsonl", true));
+				bw.newLine();
+				bw.append(gson.toJson(modo));
+				bw.flush();
+				bw.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
 }
