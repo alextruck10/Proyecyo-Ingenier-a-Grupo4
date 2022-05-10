@@ -178,7 +178,7 @@ public class ficheros {
 					persona = gson.fromJson(linea, Usuario.class);
 					if (!persona.getEmail().equalsIgnoreCase(email)) {
 						bw.append(gson.toJson(persona));
-						//bw.flush();
+						bw.flush();
 						bw.newLine();
 					}
 					

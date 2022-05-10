@@ -10,7 +10,7 @@ import model.Usuario;
 public class controlModificarAdmin extends controlModificarUsuario{
 	private Administrador user;
 	private int opcion;
-	private String userId;
+	private String userId=idText;
 	private String email;
 	private String password;
 	private String userType = "administrador";
@@ -32,8 +32,8 @@ public class controlModificarAdmin extends controlModificarUsuario{
 		email = sc.nextLine();
 		System.out.println("Password: ");
 		password = sc.nextLine();
-		System.out.println("UserID: ");
-		userId = sc.nextLine();
+		/*System.out.println("UserID: ");
+		userId = sc.nextLine();*/
 		System.out.println("Name: ");
 		name = sc.nextLine();
 		System.out.println("LastName: ");
@@ -42,7 +42,7 @@ public class controlModificarAdmin extends controlModificarUsuario{
 		birthday = sc.nextLine();
 		System.out.println("Genre: (hombre/mujer)");
 		genre = sc.nextLine();
-		System.out.println("Usuario activo? (y/n)");
+		/*System.out.println("Usuario activo? (y/n)");
 		opcionactivo = sc.nextLine();
 		
 		
@@ -50,7 +50,7 @@ public class controlModificarAdmin extends controlModificarUsuario{
 			active = true;
 		} else if (opcionactivo == "n") {
 			active = false;
-		}
+		}*/
 		System.out.println("PERFECTO. Ya tenemos todo.");
 		System.out.println("       ");
 		System.out.println("       ");
