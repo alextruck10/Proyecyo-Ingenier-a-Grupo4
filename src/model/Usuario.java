@@ -10,7 +10,7 @@ public class Usuario {
     private String lastnames;
     private String birthday;
     private String genre;
-    private Boolean active;
+    public Boolean active;
     
     
    

@@ -52,9 +52,9 @@ public class controlAdmin {
 
 			break;
 		case "5":
-			controlSuspenderUsuario controlSuspenderJugador1 = new controlSuspenderJugador();
-			controlSuspenderJugador1.setUser(user);
-			controlSuspenderJugador1.suspenderJugador();
+			controlSuspenderUsuario controlSuspenderUsuario1=new controlSuspenderUsuario();
+			controlSuspenderUsuario1.setUser(user);
+			controlSuspenderUsuario1.suspenderJugador();
 			break;
 		case "6":
 			System.out.println("Hasta pronto "+user.getName());

@@ -43,11 +43,11 @@ public class Administrador extends Usuario {
 		
 	}
 	
-public void suspenderUsuario(String dni) {
+public void suspenderUser(String dni) {
 		
 		ficheros files = new ficheros();
 		Usuario persona = files.buscarUsuarioId(dni);
-		System.out.println("xdddd");
+		
 		
 		if(persona!=null) {
 			

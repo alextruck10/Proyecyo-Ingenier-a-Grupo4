@@ -19,7 +19,6 @@ public class controlBorrarUsuario {
 		System.out.println("Id del usuario: ");
 		idText=sc.nextLine();
 		System.out.println(idText);
-		
 		user.borrarUsuario(idText);
 		
 		volverAdmin();

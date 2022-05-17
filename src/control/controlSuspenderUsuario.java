@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 import aplication.ficheros;
 import model.Administrador;
-import model.Usuario;
+//import model.Usuario;
 
 public class controlSuspenderUsuario {
 
@@ -30,12 +30,11 @@ public class controlSuspenderUsuario {
 		//System.out.println(idText);
 		
 		Scanner sc = new Scanner(System.in);
-
-		System.out.println("UserID: ");
+		System.out.println("Id del usuario: ");
 		idText=sc.nextLine();
 		System.out.println(idText);
-		
-		user.suspenderUsuario(idText);		
+		System.out.println(user.getName());
+		user.suspenderUser(idText);	
 		
 		/*System.out.println("¿A quién desea suspender/activar?");
 		Scanner sc = new Scanner(System.in);
