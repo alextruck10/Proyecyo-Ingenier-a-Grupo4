@@ -1,5 +1,6 @@
 package control;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import aplication.ficheros;
@@ -11,7 +12,7 @@ public class controlModificarUsuario {
 	public static String idText="";
 	private Administrador user;
 
-	void modificarUser() {
+	void modificarUser() throws IOException {
 		System.out.println("¿Qué usuario desea modificar?");
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Id del usuario: ");

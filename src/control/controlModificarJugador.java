@@ -79,12 +79,14 @@ public class controlModificarJugador extends controlModificarUsuario{
     	fichero.escribirPersona(nuevo2, ruta);
     	volver();
 	}
+	
 	public void volver () throws IOException {
 		ficheros files = new ficheros();
 	System.out.println("ACCIÓN FINALIZADA...Volviendo al menú");
 	controlJugador controlJugador1 = new controlJugador();
 	controlJugador1.menuJugador();		
 	}
+	
 	public void setUser(Administrador user) {
 		this.user = user;
 	}

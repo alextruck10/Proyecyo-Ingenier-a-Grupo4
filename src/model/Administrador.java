@@ -42,6 +42,41 @@ public class Administrador extends Usuario {
 		}
 		
 	}
+	
+public void suspenderUsuario(String dni) {
+		
+		ficheros files = new ficheros();
+		Usuario persona = files.buscarUsuarioId(dni);
+		System.out.println("xdddd");
+		
+		if(persona!=null) {
+			
+
+			persona = files.leerUsuario(persona);
+			/*Scanner sc = new Scanner(System.in);
+			opcionactivo=sc.nextLine();
+			if (opcionactivo == "y") {
+				active = true;
+			} else if (opcionactivo == "n") {
+				active = false;
+			}*/
+			persona.setActive(false);
+			
+			switch (persona.getUserType()) {
+				case "administrador":
+					files.escribirPersona(persona, "src/files/administradores/" + persona.getUserId() + ".jsonl");
+					break;
+				case "jugador":
+					files.escribirPersona(persona, "src/files/jugadores/" + persona.getUserId() + ".jsonl");
+					break;
+				
+			}
+			System.out.println("Usuario suspendido");
+		}else {
+			System.out.println("no hemos encontrado el usuario");
+		}
+		
+	}
 
 	@Override
 	public String toString() {
@@ -81,36 +116,11 @@ public class Administrador extends Usuario {
 		}
 		}
 
-	public void suspenderJugador(String dni) {
-		
-		ficheros files = new ficheros();
-		Usuario persona = files.buscarUsuarioId(dni);
-		System.out.println("modificar");
-		if(persona!=null) {
-			
-			persona = files.leerUsuario(persona);
-			
-			switch (persona.getUserType()) {
-					
-				case "jugador":
-					//files.escribirPersona(persona, "src/files/jugadores/" + persona.getUserId() + ".jsonl");
-					System.out.println("Jugador");
-					System.out.println("USUARIO ESCOGIDO: " + persona.getName());
-					
-
-					
-					break;
-				
-										
-			}
-						
-		}else {
-			System.out.println("No hemos encontrado el usuario");
-		}
+	
 		}
 		
 		
-	}
+	
 
 
 	/*public void confirmarModificarUsuario(String dni, String id,String mail,
