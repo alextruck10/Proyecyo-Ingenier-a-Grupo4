@@ -1,8 +1,13 @@
 package model;
 
+import java.util.Scanner;
+
 import aplication.ficheros;
 
+
 public class Administrador extends Usuario {
+	
+	
 
 	public Administrador(String userId, String email, String password, String userType, String name, String lastnames,
 			String birthdate, String genre, Boolean active) {
@@ -76,6 +81,38 @@ public class Administrador extends Usuario {
 		}
 		}
 
+	public void suspenderJugador(String dni) {
+		
+		ficheros files = new ficheros();
+		Usuario persona = files.buscarUsuarioId(dni);
+		System.out.println("modificar");
+		if(persona!=null) {
+			
+			persona = files.leerUsuario(persona);
+			
+			switch (persona.getUserType()) {
+					
+				case "jugador":
+					//files.escribirPersona(persona, "src/files/jugadores/" + persona.getUserId() + ".jsonl");
+					System.out.println("Jugador");
+					System.out.println("USUARIO ESCOGIDO: " + persona.getName());
+					
+
+					
+					break;
+				
+										
+			}
+						
+		}else {
+			System.out.println("No hemos encontrado el usuario");
+		}
+		}
+		
+		
+	}
+
+
 	/*public void confirmarModificarUsuario(String dni, String id,String mail,
 			String password, String type, String name, String lastname, String day,
 			String gen, Boolean act) {
@@ -120,4 +157,3 @@ public class Administrador extends Usuario {
 
 
 
-}
