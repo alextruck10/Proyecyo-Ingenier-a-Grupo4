@@ -104,10 +104,15 @@ public class controlAnadirJugador {
     	fichero.escribirArmas(nuevas);
     	fichero.escribirModos(nuevos);
     	fichero.escribirPersona(nuevo2, ruta);
-    	
+    	volver();
 		
 	}
-	
+	public void volver () throws IOException {
+		ficheros files = new ficheros();
+	System.out.println("ACCIÓN FINALIZADA...Volviendo al menú");
+	controlAdmin controlAdmin2 = new controlAdmin();
+	controlAdmin2.menuAdmin();
+	}
 
 	public void setUsuario(Administrador user) {
 		this.user = user;

@@ -1,6 +1,7 @@
 package control;
 import model.Administrador;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import aplication.ficheros;
@@ -22,7 +23,7 @@ public class controlAnadirAdmin {
 	private String opcionactivo;
 	private Administrador user;
 	
-	public void AnadirAdmin()	
+	public void AnadirAdmin() throws IOException	
 	{
 		System.out.println("Has elegido CREAR UN ADMINISTRADOR.");
 		System.out.println("1.Email:");
@@ -73,6 +74,13 @@ public class controlAnadirAdmin {
     	ficheros fichero = new ficheros();
     	fichero.escribirLogin(nuevo);
     	fichero.escribirPersona(nuevo2, ruta);
+    	volver();
+	}
+	public void volver () throws IOException {
+		ficheros files = new ficheros();
+	System.out.println("ACCIÓN FINALIZADA...Volviendo al menú");
+	controlAdmin controlAdmin2 = new controlAdmin();
+	controlAdmin2.menuAdmin();
 	}
 	
 	public void setUsuario(Administrador user) {

@@ -1,6 +1,7 @@
 package control;
 
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import aplication.ficheros;
@@ -26,7 +27,7 @@ public class controlSuspenderJugador  extends controlSuspenderUsuario{
 	private boolean active=true;
 	
 	
-	void suspender(){
+	void suspender() throws IOException{
 		
 		System.out.println("TE HAS ADENTRADO EN EL SISTEMA PARA SUSPENDER/ACTIVAR UN JUGADOR");		
 		System.out.println(idText);
@@ -52,9 +53,15 @@ public class controlSuspenderJugador  extends controlSuspenderUsuario{
     	ficheros fichero = new ficheros();
     	fichero.escribirLogin(nuevo);
     	fichero.escribirPersona(nuevo2, ruta);	
+    	volver();
 	
 	}
-	
+	public void volver () throws IOException {
+		ficheros files = new ficheros();
+	System.out.println("ACCIÓN FINALIZADA...Volviendo al menú");
+	controlJugador controlJugador1 = new controlJugador();
+	controlJugador1.menuJugador();		
+	}
 	public void setUser(Administrador user) {
 		this.user = user;
 	}

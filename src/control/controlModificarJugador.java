@@ -1,5 +1,6 @@
 package control;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import aplication.ficheros;
@@ -23,7 +24,7 @@ public class controlModificarJugador extends controlModificarUsuario{
 	private String opcionactivo;
 
 
-	void modificarJugador() {
+	void modificarJugador() throws IOException {
 		System.out.println("TE HAS ADENTRADO EN EL SISTEMA PARA MODIFICAR UN JUGADOR");		
 		System.out.println(idText);
 		user.borrarUsuario(idText);
@@ -76,8 +77,14 @@ public class controlModificarJugador extends controlModificarUsuario{
     	ficheros fichero = new ficheros();
     	fichero.escribirLogin(nuevo);
     	fichero.escribirPersona(nuevo2, ruta);
+    	volver();
 	}
-	
+	public void volver () throws IOException {
+		ficheros files = new ficheros();
+	System.out.println("ACCIÓN FINALIZADA...Volviendo al menú");
+	controlJugador controlJugador1 = new controlJugador();
+	controlJugador1.menuJugador();		
+	}
 	public void setUser(Administrador user) {
 		this.user = user;
 	}

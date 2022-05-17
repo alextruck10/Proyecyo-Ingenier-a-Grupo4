@@ -1,5 +1,6 @@
 package control;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import aplication.ficheros;
@@ -13,9 +14,9 @@ public class controlModificarEstadisticas {
 	private Administrador user;
 
 
-	void modificarEstadisticas() {
+	void modificarEstadisticas() throws IOException {
 		
-		System.out.println("¿De quién desea modificar las estadísticas?");
+		System.out.println("ï¿½De quiï¿½n desea modificar las estadï¿½sticas?");
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Id del usuario: ");
@@ -25,9 +26,14 @@ public class controlModificarEstadisticas {
 		Armas armas = files.buscarArmas(idText);
 		
 		System.out.println(armas.toString());
-		
+		volver();
 		}
-	
+	public void volver () throws IOException {
+		ficheros files = new ficheros();
+	System.out.println("ACCIÃ“N FINALIZADA...Volviendo al menÃº");
+	controlJugador controlJugador1 = new controlJugador();
+	controlJugador1.menuJugador();		
+	}
 	public void setUser(Administrador user) {
 		this.user = user;
 	}
