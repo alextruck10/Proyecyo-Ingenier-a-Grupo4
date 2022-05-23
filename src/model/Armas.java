@@ -97,6 +97,30 @@ public class Armas{
 				+ getEscopetas() + ", getFranco()=" + getFranco() + ", getPistolas()=" + getPistolas()
 				+ "]";
 	}
+	
+	public String fusiles() {
+		return "Tus bajas con Fusiles son:" + getFusiles();
+	}
+	
+	public String subfusiles() {
+		return "Tus bajas con Subfusiles son:" + getSubfusiles();
+	}
+	
+	public String escopetas() {
+		return "Tus bajas con Escopetas son:" + getEscopetas();
+	}
+	
+	public String ametralladoras() {
+		return "Tus bajas con Ametralladoras son:" + getAmetralladoras();
+	}
+	
+	public String franco() {
+		return "Tus bajas con Francotiradores son:" + getFranco();
+	}
+	
+	public String pistolas() {
+		return "Tus bajas con Pistolas son:" + getPistolas();
+	}
 		
 
 

@@ -24,10 +24,11 @@ public class controlModificarEstadisticas {
 		
 		ficheros files = new ficheros();
 		Armas armas = files.buscarArmas(idText);
-		
 		System.out.println(armas.toString());
 		volver();
 		}
+	
+	
 	public void volver () throws IOException {
 		ficheros files = new ficheros();
 	System.out.println("ACCIÓN FINALIZADA...Volviendo al menú");
