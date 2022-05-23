@@ -163,6 +163,57 @@ public class ficheros {
 	
 	//AQUI IRIA EL ESCRIBIR ENLACE, ESCRIBIR CHAT, LEER CHAT, ELIMINAR USUARIO LOGIN
 	
+		public void escribirEnlace(Enlace en) {
+			Gson gson = new Gson();
+			try {
+				BufferedWriter bw = new BufferedWriter(new FileWriter("src/files/enlaces.jsonl", true));
+				bw.newLine();
+				bw.append(gson.toJson(en));
+				bw.flush();
+				bw.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		public void escribirChat(Mensaje mensaje, String ruta) {
+			Gson gson = new Gson();
+			try {
+				BufferedWriter bw = new BufferedWriter(new FileWriter(ruta, true));
+				bw.newLine();
+				bw.append(gson.toJson(mensaje));
+				bw.flush();
+				bw.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		public ArrayList<Mensaje> leerChat(String ruta) {
+			ArrayList<Mensaje> lista = new ArrayList<Mensaje>();
+			File file = new File(ruta);
+			if (file.exists()) {
+				try {
+					Gson gson = new Gson();
+					BufferedReader br = new BufferedReader(new FileReader(ruta));
+					String linea;
+					Mensaje men;
+					while ((linea = br.readLine()) != null) {
+						if(!linea.equals("")){
+							men = gson.fromJson(linea, Mensaje.class);
+							lista.add(men);
+						}
+
+					}
+					br.close();
+
+				} catch (IOException ex) {
+					System.out.println(ex.getMessage());
+				}
+			}
+
+			return lista;
+		}
 		
 		public boolean eliminarUsuarioLogin(String email) {
 			Gson gson = new Gson();
