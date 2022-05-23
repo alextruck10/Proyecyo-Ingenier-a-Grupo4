@@ -1,5 +1,14 @@
 package control;
 
-public class controlEnlazarJugador {
+import model.Administrador;
 
+public class controlEnlazarJugador {
+	private Administrador user;
+	
+	void enlazarJugador() {
+		
+	}
+	public void setUser(Administrador user) {
+		this.user = user;
+	}
 }

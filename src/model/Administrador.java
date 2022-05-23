@@ -47,20 +47,22 @@ public void suspenderUser(String dni) {
 		
 		ficheros files = new ficheros();
 		Usuario persona = files.buscarUsuarioId(dni);
-		
-		
+
 		if(persona!=null) {
 			
 
 			persona = files.leerUsuario(persona);
-			/*Scanner sc = new Scanner(System.in);
-			opcionactivo=sc.nextLine();
-			if (opcionactivo == "y") {
-				active = true;
-			} else if (opcionactivo == "n") {
-				active = false;
+			/*System.out.println("¿Desea activar un usuario (1) o suspenderlo (2)?");
+			Scanner sc = new Scanner(System.in);
+			String opcionactivo = sc.nextLine();
+			if (opcionactivo == "1") {
+				persona.setActive(true);
+			} else if (opcionactivo == "2") {
+				persona.setActive(false);
 			}*/
 			persona.setActive(false);
+
+			
 			
 			switch (persona.getUserType()) {
 				case "administrador":
@@ -77,6 +79,44 @@ public void suspenderUser(String dni) {
 		}
 		
 	}
+
+public void activarUser(String dni) {
+	
+	ficheros files = new ficheros();
+	Usuario persona = files.buscarUsuarioId(dni);
+
+	
+	if(persona!=null) {
+		
+
+		persona = files.leerUsuario(persona);
+		/*System.out.println("¿Desea activar un usuario (1) o suspenderlo (2)?");
+		Scanner sc = new Scanner(System.in);
+		String opcionactivo = sc.nextLine();
+		if (opcionactivo == "1") {
+			persona.setActive(true);
+		} else if (opcionactivo == "2") {
+			persona.setActive(false);
+		}*/
+		persona.setActive(true);
+
+		
+		
+		switch (persona.getUserType()) {
+			case "administrador":
+				files.escribirPersona(persona, "src/files/administradores/" + persona.getUserId() + ".jsonl");
+				break;
+			case "jugador":
+				files.escribirPersona(persona, "src/files/jugadores/" + persona.getUserId() + ".jsonl");
+				break;
+			
+		}
+		System.out.println("Usuario reactivado");
+	}else {
+		System.out.println("no hemos encontrado el usuario");
+	}
+	
+}
 
 	@Override
 	public String toString() {

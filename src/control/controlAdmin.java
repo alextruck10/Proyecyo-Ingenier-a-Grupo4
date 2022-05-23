@@ -25,7 +25,9 @@ public class controlAdmin {
 		System.out.println("3.Eliminar usuario\n");
 		System.out.println("4.Revisar y modificar estadísticas\n");
 		System.out.println("5.Suspender usuario\n");
-		System.out.println("6.Cerrar sesión\n");
+		System.out.println("6.Reactivar usuario\n");
+		System.out.println("7.Enlazar jugadores\n");
+		System.out.println("8.Cerrar sesión\n");
 		opcion=teclado.next();
 		
 		switch(opcion) {
@@ -56,7 +58,23 @@ public class controlAdmin {
 			controlSuspenderUsuario1.setUser(user);
 			controlSuspenderUsuario1.suspenderJugador();
 			break;
+			
 		case "6":
+			controlActivarUsuario controlActivarUsuario1=new controlActivarUsuario();
+			controlActivarUsuario1.setUser(user);
+			controlActivarUsuario1.activarJugador();
+			
+			break;
+			
+		case "7":
+			controlEnlazarJugador controlEnlazarJugador1=new controlEnlazarJugador();
+			controlEnlazarJugador1.setUser(user);
+			controlEnlazarJugador1.enlazarJugador();
+			
+			break;
+			
+			
+		case "8":
 			System.out.println("Hasta pronto "+user.getName());
 			controlLogin controlLogin1 = new controlLogin();
 			controlLogin1.comprobarLogin();
