@@ -12,6 +12,7 @@ import model.Administrador;
 import model.Jugador;
 import model.Usuario;
 import model.Armas;
+import model.Modos;
 import aplication.ficheros;
 
 
@@ -26,7 +27,6 @@ public class controlJugador {
 	private String escopetas;
 	private String francotiradores;
 	private String pistolas;
-	private String rachasDePuntos;
 	
 	private Jugador user;
 	
@@ -40,9 +40,8 @@ public class controlJugador {
 	System.out.println("1.Modos de juego\n");
 	System.out.println("2.% Victorias/Derrotas\n");
 	System.out.println("3.Armas\n");
-	System.out.println("4.Rachas de puntos\n");
-	System.out.println("5.Ajustes\n");
-	System.out.println("6.Cerrar sesi�n\n");
+	System.out.println("4.Ajustes\n");
+	System.out.println("5.Cerrar sesi�n\n");
 	
 
 	opcion=teclado.next();
@@ -57,10 +56,7 @@ public class controlJugador {
 		System.out.println("Elija una de las opciones 1-6: \n");
 		System.out.println("1.Duelo por equipos\n");
 		System.out.println("2.Dominio\n");
-		System.out.println("3.Baja Confirmada\n");
-		System.out.println("4.Juego de Armas\n");
-		System.out.println("5.Demolici�n\n");
-		System.out.println("6.Punto Caliente\n");
+		System.out.println("3.Punto Caliente\n");
 		System.out.println("0.Volver\n");
 		
 		modosDeJuego=teclado2.next();
@@ -70,29 +66,33 @@ public class controlJugador {
 			
 			break;
 		case "1":
-			System.out.println("Duelo por equipos:");
+			ficheros files8 = new ficheros();
+			Modos modos = files8.buscarModos(usuario);
+			System.out.println(modos.dueloporequiposwin());
+			System.out.println(modos.dueloporequipostotal());
 			break;
 		case "2":
-			System.out.println("Dominio");
+			ficheros files9 = new ficheros();
+			Modos modos2 = files9.buscarModos(usuario);
+			System.out.println(modos2.dominiowin());
+			System.out.println(modos2.dominiototal());
 			break;
 		case "3":
-			System.out.println("Baja Confirmada");
-			break;
-		case "4":
-			System.out.println("Juego de Armas");
-			break;
-		case "5":
-			System.out.println("Demolici�n");
-			break;
-		case "6":
-			System.out.println("Punto Caliente");
+			ficheros files10 = new ficheros();
+			Modos modos3 = files10.buscarModos(usuario);
+			System.out.println(modos3.calientewin());
+			System.out.println(modos3.calientetotal());
 			break;
 		}
 		break;
 		
 	case "2":
 		System.out.println("% Victorias/Derrotas");
+		ficheros files10 = new ficheros();
+		Modos modos3 = files10.buscarModos(usuario);
+		System.out.println((double)modos3.totalwins()*100/(double)modos3.totalpartidas()+"%");
 		break;
+		
 	case "3":
 		Scanner teclado3 = new Scanner (System.in);
 		
@@ -147,11 +147,8 @@ public class controlJugador {
 		}
 		break;
 	case "4":
-		System.out.println("Rachas de puntos");
-		break;
-	case "5":
 		System.out.println("Ajustes");
-	case "6":
+	case "5":
 		System.out.println("Hasta pronto"+user.getName());
 		controlLogin controlLogin1 = new controlLogin();
 		controlLogin1.comprobarLogin();

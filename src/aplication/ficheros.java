@@ -186,7 +186,7 @@ public class ficheros {
 				br.close();
 				bw.close();
 				System.out.println("fichero viejo duplicado");
-				if (ficheroViejo.delete()) { // Aqui­ deberia eliminar el original
+				if (ficheroViejo.delete()) { // Aquiï¿½ deberia eliminar el original
 					System.out.println("fichero viejo eliminado");
 					File renombrar = new File("src/files/login.jsonl");
 					if (ficheroNuevo.renameTo(renombrar)) { // Aqui deberia renombrarlo al nombre original
@@ -226,7 +226,7 @@ public class ficheros {
 				br.close();
 				bw.close();
 				System.out.println("fichero viejo duplicado");
-				if (ficheroViejo.delete()) { // Aqui­ deberia eliminar el original
+				if (ficheroViejo.delete()) { // Aquiï¿½ deberia eliminar el original
 					System.out.println("fichero viejo eliminado");
 					File renombrar = new File("src/files/armas.jsonl");
 					if (ficheroNuevo.renameTo(renombrar)) { // Aqui deberia renombrarlo al nombre original
@@ -265,7 +265,7 @@ public class ficheros {
 				br.close();
 				bw.close();
 				System.out.println("fichero viejo duplicado");
-				if (ficheroViejo.delete()) { // Aqui­ deberia eliminar el original
+				if (ficheroViejo.delete()) { // Aquiï¿½ deberia eliminar el original
 					System.out.println("fichero viejo eliminado");
 					File renombrar = new File("src/files/modos.jsonl");
 					if (ficheroNuevo.renameTo(renombrar)) { // Aqui deberia renombrarlo al nombre original
@@ -338,6 +338,32 @@ public class ficheros {
 			}
 			return armas;
 		}*/
+		public Modos buscarModos(String dni) {
+			Gson gson = new Gson();
+			Modos modos = null;
+			Boolean encontrado = false;
+			try {
+				BufferedReader br = new BufferedReader(new FileReader("src/files/modos.jsonl"));
+				String linea;
+				
+				while ((linea = br.readLine()) != null && !encontrado) {
+					try {
+						modos = gson.fromJson(linea, Modos.class);
+						if (modos.getUserId().equalsIgnoreCase(dni)) {
+							encontrado = true;
+						}
+					}catch (Exception e) {}
+				}
+				br.close();
+			} catch (IOException ex) {
+				System.out.println(ex.getMessage());
+			}
+			if(encontrado) {
+				return modos;
+			}else {
+				return null;
+			}
+		}
 		
 		public void escribirArmas(Armas arma) {
 			

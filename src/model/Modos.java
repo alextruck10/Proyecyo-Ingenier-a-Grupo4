@@ -73,6 +73,54 @@ public class Modos {
 				+ ", modocalientewins=" + modocalientewins + ", modocalientetotal=" + modocalientetotal + "]";
 	}
 	
+	public String dueloporequiposwin() {
+		return "Tus victorias en Duelo por Equipos son:" + mododuelowins;
+		
+	}
+	
+	public String dominiowin() {
+		return "Tus victorias en Dominio son:" + mododominiowins;
+		
+	}
+	
+	public String calientewin() {
+		return "Tus victorias en Punto Caliente son:" + modocalientewins;
+		
+	}
+	
+	public String dueloporequipostotal() {
+		return "El total de partidas jugadas en Duelo por Equipos son:" + mododuelototal;
+		
+	}
+	
+	public String dominiototal() {
+		return "El total de partidas jugadas en Dominio son:" + mododominiototal;
+		
+	}
+	
+	public String calientetotal() {
+		return "El total de partidas jugadas en Punto Caliente son:" + modocalientetotal;
+		
+	}
+	
+	public int totalpartidas() {
+		
+		int totalpartidas;
+		totalpartidas=modocalientetotal+modocalientetotal+mododominiototal;
+		
+		return totalpartidas;
+		
+	}
+	
+public int totalwins() {
+		
+		int totalwins;
+		totalwins=mododuelowins+mododominiowins+modocalientewins;
+		
+		return totalwins;
+		
+	}
+	
 	
 	
 
