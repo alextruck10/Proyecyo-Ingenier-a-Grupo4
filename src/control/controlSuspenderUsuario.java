@@ -1,4 +1,5 @@
 package control;
+import java.io.IOException;
 import java.util.Scanner;
 
 import aplication.ficheros;
@@ -23,7 +24,7 @@ public class controlSuspenderUsuario {
 	private boolean active;*/
 	
 	
-	void suspenderJugador() {
+	void suspenderJugador() throws IOException {
 		
 		System.out.println("TE HAS ADENTRADO EN EL SISTEMA PARA SUSPENDER/ACTIVAR UN JUGADOR");		
 		
@@ -35,7 +36,7 @@ public class controlSuspenderUsuario {
 		System.out.println(idText);
 		System.out.println(user.getName());
 		user.suspenderUser(idText);	
-		
+		volver();
 		/*System.out.println("¿A quién desea suspender/activar?");
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Id del usuario: ");
@@ -62,6 +63,12 @@ public class controlSuspenderUsuario {
 			}
 		}*/
 	}
+	public void volver () throws IOException {
+		ficheros files = new ficheros();
+		System.out.println("ACCIÓN FINALIZADA...Volviendo al menu");
+		controlAdmin controlAdmin2 = new controlAdmin();
+		controlAdmin2.menuAdmin();
+		}
 	
 	public void setUser(Administrador user) {
 		this.user = user;

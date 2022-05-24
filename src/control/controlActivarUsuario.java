@@ -1,5 +1,6 @@
 	package control;
-	import java.util.Scanner;
+	import java.io.IOException;
+import java.util.Scanner;
 
 	import aplication.ficheros;
 	import model.Administrador;
@@ -12,7 +13,7 @@
 		
 
 		
-		void activarJugador() {
+		void activarJugador() throws IOException {
 			
 			System.out.println("TE HAS ADENTRADO EN EL SISTEMA PARA REACTIVAR UN JUGADOR");		
 			
@@ -24,7 +25,7 @@
 			System.out.println(idText);
 			System.out.println(user.getName());
 			user.activarUser(idText);	
-			
+			volver();
 			/*System.out.println("¿A quién desea suspender/activar?");
 			Scanner sc = new Scanner(System.in);
 			System.out.println("Id del usuario: ");
@@ -51,6 +52,12 @@
 				}
 			}*/
 		}
+		public void volver () throws IOException {
+			ficheros files = new ficheros();
+			System.out.println("ACCIÓN FINALIZADA...Volviendo al menu");
+			controlAdmin controlAdmin2 = new controlAdmin();
+			controlAdmin2.menuAdmin();
+			}
 		
 		public void setUser(Administrador user) {
 			this.user = user;

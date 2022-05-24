@@ -78,7 +78,7 @@ public class controlAnadirAdmin {
 	}
 	public void volver () throws IOException {
 		ficheros files = new ficheros();
-	System.out.println("ACCIÓN FINALIZADA...Volviendo al menú");
+	System.out.println("ACCI�N FINALIZADA...Volviendo al menu");
 	controlAdmin controlAdmin2 = new controlAdmin();
 	controlAdmin2.menuAdmin();
 	}

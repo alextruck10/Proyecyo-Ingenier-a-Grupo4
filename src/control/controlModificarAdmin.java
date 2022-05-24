@@ -1,5 +1,6 @@
 package control;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import aplication.ficheros;
@@ -22,7 +23,7 @@ public class controlModificarAdmin extends controlModificarUsuario{
 	private String opciongenero;
 	private String opcionactivo;
 	
-	void modificarAdministrador() {
+	void modificarAdministrador() throws IOException {
 		System.out.println("TE HAS ADENTRADO EN EL SISTEMA PARA MODIFICAR UN ADMINISTRADOR");		
 		user.borrarUsuario(idText);
 		
@@ -74,8 +75,14 @@ public class controlModificarAdmin extends controlModificarUsuario{
     	ficheros fichero = new ficheros();
     	fichero.escribirLogin(nuevo);
     	fichero.escribirPersona(nuevo2, ruta);
+    	volver();
 	}
-	
+	public void volver () throws IOException {
+		ficheros files = new ficheros();
+		System.out.println("ACCIÓN FINALIZADA...Volviendo al menu");
+		controlAdmin controlAdmin2 = new controlAdmin();
+		controlAdmin2.menuAdmin();
+		}
 	public void setUser(Administrador user) {
 		this.user = user;
 	}

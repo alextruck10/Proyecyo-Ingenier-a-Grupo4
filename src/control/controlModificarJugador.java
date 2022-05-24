@@ -81,7 +81,7 @@ public class controlModificarJugador extends controlModificarUsuario{
 	}
 	
 	public void volver () throws IOException {
-		ficheros files = new ficheros();
+	ficheros files = new ficheros();
 	System.out.println("ACCIÓN FINALIZADA...Volviendo al menú");
 	controlJugador controlJugador1 = new controlJugador();
 	controlJugador1.menuJugador();		

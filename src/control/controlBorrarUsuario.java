@@ -1,5 +1,6 @@
 package control;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import aplication.ficheros;
@@ -12,7 +13,7 @@ public class controlBorrarUsuario {
 	private String idText;
 	private Administrador user;
 	
-	void borrarUser() {
+	void borrarUser() throws IOException {
 		System.out.println("¿Qué usuario desea eliminar?");
 		//System.out.println(user.toString());
 		Scanner sc = new Scanner(System.in);
@@ -21,19 +22,19 @@ public class controlBorrarUsuario {
 		System.out.println(idText);
 		user.borrarUsuario(idText);
 		
-		volverAdmin();
+		volver();
     	
     	
     	
 		
 	}
 	
-	void volverAdmin() {
-        	
-        	controlAdmin controlAdmin = new controlAdmin();
-			controlAdmin.setUsuario(user);
-		
-		}
+	public void volver () throws IOException {
+		ficheros files = new ficheros();
+	System.out.println("ACCIÃ“N FINALIZADA...Volviendo al menÃº");
+	controlAdmin controlAdmin2 = new controlAdmin();
+	controlAdmin2.menuAdmin();
+	}
     	
 	
 	public void setUser(Administrador user) {
