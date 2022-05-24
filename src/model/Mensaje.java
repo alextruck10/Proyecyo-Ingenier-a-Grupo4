@@ -26,5 +26,10 @@ public class Mensaje {
 		this.texto = texto;
 	}
 
+	@Override
+	public String toString() {
+		return  nombre + ": " + texto +"\n";
+	}
+
 
 }
