@@ -42,7 +42,7 @@ public class controlJugador {
 	System.out.println("3.Armas\n");
 	System.out.println("4.Ajustes\n");
 	System.out.println("5.Chat\n");
-	System.out.println("6.Cerrar sesión\n");
+	System.out.println("6.Cerrar sesiï¿½n\n");
 	
 
 	opcion=teclado.next();
@@ -110,37 +110,37 @@ public class controlJugador {
 		
 		switch (armas) {
 		case "1":
-			System.out.println("Has elegido mostrar las estadísticas del arma: FUSILES");
+			System.out.println("Has elegido mostrar las estadï¿½sticas del arma: FUSILES");
 			ficheros files = new ficheros();
 			Armas armas = files.buscarArmas(usuario);
 			System.out.println(armas.fusiles());
 			break;
 		case "2":
-			System.out.println("Has elegido mostrar las estadísticas del arma: Subfusiles");
+			System.out.println("Has elegido mostrar las estadï¿½sticas del arma: Subfusiles");
 			ficheros files2 = new ficheros();
 			Armas armas2 = files2.buscarArmas(usuario);
 			System.out.println(armas2.subfusiles());
 			break;
 		case "3":
-			System.out.println("Has elegido mostrar las estadísticas del arma: Ametralladoras");
+			System.out.println("Has elegido mostrar las estadï¿½sticas del arma: Ametralladoras");
 			ficheros files3 = new ficheros();
 			Armas armas3 = files3.buscarArmas(usuario);
 			System.out.println(armas3.ametralladoras());
 			break;
 		case "4":
-			System.out.println("Has elegido mostrar las estadísticas del arma: Escopetas");
+			System.out.println("Has elegido mostrar las estadï¿½sticas del arma: Escopetas");
 			ficheros files4 = new ficheros();
 			Armas armas4 = files4.buscarArmas(usuario);
 			System.out.println(armas4.escopetas());
 			break;
 		case "5":
-			System.out.println("Has elegido mostrar las estadísticas del arma: Francotiradores");
+			System.out.println("Has elegido mostrar las estadï¿½sticas del arma: Francotiradores");
 			ficheros files5 = new ficheros();
 			Armas armas5 = files5.buscarArmas(usuario);
 			System.out.println(armas5.franco());
 			break;
 		case "6":
-			System.out.println("Has elegido mostrar las estadísticas del arma: Pistolas");
+			System.out.println("Has elegido mostrar las estadï¿½sticas del arma: Pistolas");
 			ficheros files6 = new ficheros();
 			Armas armas6 = files6.buscarArmas(usuario);
 			System.out.println(armas6.pistolas());
@@ -148,7 +148,9 @@ public class controlJugador {
 		}
 		break;
 	case "4":
-		System.out.println("Ajustes");
+		controlAjustes contraseÃ±a = new controlAjustes();
+		contraseÃ±a.setUser(user);
+		contraseÃ±a.cambiarpassword();
 		break;
 	case "5":
 		System.out.println("Chat");
