@@ -31,8 +31,8 @@ public class controlChat {
 	public void volver () throws IOException {
 	ficheros files = new ficheros();
 	System.out.println("ACCIÓN FINALIZADA...Volviendo al menu");
-	controlAdmin controlAdmin2 = new controlAdmin();
-	controlAdmin2.menuAdmin();
+	controlJugador controlJugador2 = new controlJugador();
+	controlJugador2.menuJugador();
 	}
 	public void setUser(Jugador u) {
     	user = u;
