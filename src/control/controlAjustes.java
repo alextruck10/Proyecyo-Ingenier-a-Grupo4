@@ -22,15 +22,31 @@ void cambiarpassword() throws IOException {
 		System.out.println(idText);
 		System.out.println(user.getName());
 		user.editarpassword(idText);	
-		volver();
+		//volver();
 		
 	}
-	public void volver () throws IOException {
+
+void cambiarNombre() throws IOException {
+	
+	System.out.println("TE HAS ADENTRADO EN EL SISTEMA PARA CAMBIAR EL NOMBRE DE TU CUENTA");		
+	
+	//System.out.println(idText);
+	
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Id del usuario: ");
+	idText=sc.nextLine();
+	System.out.println(idText);
+	System.out.println(user.getName());
+	user.editarNombre(idText);	
+	//volver();
+	
+}
+	/*public void volver () throws IOException {
 		ficheros files = new ficheros();
 		System.out.println("ACCI�N FINALIZADA...Volviendo al menu");
-		controlAdmin controlAdmin2 = new controlAdmin();
-		controlAdmin2.menuAdmin();
-		}
+		controlJugador controlJugador2 = new controlJugador();
+		controlJugador2.menuJugador();
+		}*/
 	
 	public void setUser(Jugador user) {
 		this.user = user;

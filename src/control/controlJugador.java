@@ -54,7 +54,7 @@ public class controlJugador {
 		Scanner teclado2 = new Scanner (System.in);
 		
 		System.out.println("TE HAS ADENTRADO EN LOS MODOS DE JUEGO\n");
-		System.out.println("Elija una de las opciones 1-6: \n");
+		System.out.println("Elija una de las opciones 1-3: \n");
 		System.out.println("1.Duelo por equipos\n");
 		System.out.println("2.Dominio\n");
 		System.out.println("3.Punto Caliente\n");
@@ -148,9 +148,28 @@ public class controlJugador {
 		}
 		break;
 	case "4":
-		controlAjustes contrase√±a = new controlAjustes();
-		contrase√±a.setUser(user);
-		contrase√±a.cambiarpassword();
+		
+		String opcionAjustes;
+		Scanner teclado4 = new Scanner (System.in);
+		System.out.println("1 Cambiar contraseÒa || 2 Cambiar nombre");
+		opcionAjustes=teclado4.next();
+		
+			switch (opcionAjustes) {
+			
+			case "1":
+				System.out.println("1 Cambiar contraseÒa");
+				controlAjustes contrasena = new controlAjustes();
+				contrasena.setUser(user);
+				contrasena.cambiarpassword();
+				break;
+			case "2":
+				System.out.println("2 Cambiar nombre");
+				controlAjustes nombre = new controlAjustes();
+				nombre.setUser(user);
+				nombre.cambiarNombre();
+				break;
+			}
+		
 		break;
 	case "5":
 		System.out.println("Chat");
