@@ -19,7 +19,6 @@ import aplication.ficheros;
 public class controlJugador {
 
 	private String opcion;
-	private String modosDeJuego;
 	private String armas;
 	private String fusiles;
 	private String subfusiles;
@@ -27,11 +26,11 @@ public class controlJugador {
 	private String escopetas;
 	private String francotiradores;
 	private String pistolas;
-	
+	private String id;
 	private Jugador user;
 	
 	void menuJugador() throws IOException {
-	String usuario=user.getUserId();	
+	
 	Scanner teclado=new Scanner(System.in);
 	System.out.println("********************************************************************");
 
@@ -42,139 +41,59 @@ public class controlJugador {
 	System.out.println("3.Armas\n");
 	System.out.println("4.Ajustes\n");
 	System.out.println("5.Chat\n");
-	System.out.println("6.Cerrar sesiï¿½n\n");
-	
+	System.out.println("6.Cerrar sesión\n");
+		
+
 
 	opcion=teclado.next();
 	
 	switch (opcion){
 	
 	case "1": 
+		controlModo controlModo1=new controlModo();
+		controlModo1.setUser(user);
+		controlModo1.modo();
 		
-		Scanner teclado2 = new Scanner (System.in);
-		
-		System.out.println("TE HAS ADENTRADO EN LOS MODOS DE JUEGO\n");
-		System.out.println("Elija una de las opciones 1-3: \n");
-		System.out.println("1.Duelo por equipos\n");
-		System.out.println("2.Dominio\n");
-		System.out.println("3.Punto Caliente\n");
-		System.out.println("0.Volver\n");
-		
-		modosDeJuego=teclado2.next();
-		
-		switch (modosDeJuego) {
-		case "0":
-			
-			break;
-		case "1":
-			ficheros files8 = new ficheros();
-			Modos modos = files8.buscarModos(usuario);
-			System.out.println(modos.dueloporequiposwin());
-			System.out.println(modos.dueloporequipostotal());
-			break;
-		case "2":
-			ficheros files9 = new ficheros();
-			Modos modos2 = files9.buscarModos(usuario);
-			System.out.println(modos2.dominiowin());
-			System.out.println(modos2.dominiototal());
-			break;
-		case "3":
-			ficheros files10 = new ficheros();
-			Modos modos3 = files10.buscarModos(usuario);
-			System.out.println(modos3.calientewin());
-			System.out.println(modos3.calientetotal());
-			break;
-		}
 		break;
 		
 	case "2":
-		System.out.println("% Victorias/Derrotas");
-		ficheros files10 = new ficheros();
-		Modos modos3 = files10.buscarModos(usuario);
-		System.out.println((double)modos3.totalwins()*100/(double)modos3.totalpartidas()+"%");
+		controlVictoriasDerrotas controlVictoriasDerrotas1=new controlVictoriasDerrotas();
+		controlVictoriasDerrotas1.setUser(user);
+		controlVictoriasDerrotas1.victoriasDerrotas();
 		break;
 		
 	case "3":
-		Scanner teclado3 = new Scanner (System.in);
+		controlArmasJugador armasJugador=new controlArmasJugador();
+		armasJugador.setUser(user);
+		armasJugador.armasJugador();
 		
-		System.out.println("TE HAS ADENTRADO EN LOS TIPOS DE ARMAS\n");
-		System.out.println("Elija una de las opciones 1-6: \n");
-		System.out.println("1.Fusiles\n");
-		System.out.println("2.Subfusiles\n");
-		System.out.println("3.Ametralladoras\n");
-		System.out.println("4.Escopetas\n");
-		System.out.println("5.Francotiradores\n");
-		System.out.println("6.Pistolas\n");
-		
-		armas=teclado3.next();
-		
-		switch (armas) {
-		case "1":
-			System.out.println("Has elegido mostrar las estadï¿½sticas del arma: FUSILES");
-			ficheros files = new ficheros();
-			Armas armas = files.buscarArmas(usuario);
-			System.out.println(armas.fusiles());
-			break;
-		case "2":
-			System.out.println("Has elegido mostrar las estadï¿½sticas del arma: Subfusiles");
-			ficheros files2 = new ficheros();
-			Armas armas2 = files2.buscarArmas(usuario);
-			System.out.println(armas2.subfusiles());
-			break;
-		case "3":
-			System.out.println("Has elegido mostrar las estadï¿½sticas del arma: Ametralladoras");
-			ficheros files3 = new ficheros();
-			Armas armas3 = files3.buscarArmas(usuario);
-			System.out.println(armas3.ametralladoras());
-			break;
-		case "4":
-			System.out.println("Has elegido mostrar las estadï¿½sticas del arma: Escopetas");
-			ficheros files4 = new ficheros();
-			Armas armas4 = files4.buscarArmas(usuario);
-			System.out.println(armas4.escopetas());
-			break;
-		case "5":
-			System.out.println("Has elegido mostrar las estadï¿½sticas del arma: Francotiradores");
-			ficheros files5 = new ficheros();
-			Armas armas5 = files5.buscarArmas(usuario);
-			System.out.println(armas5.franco());
-			break;
-		case "6":
-			System.out.println("Has elegido mostrar las estadï¿½sticas del arma: Pistolas");
-			ficheros files6 = new ficheros();
-			Armas armas6 = files6.buscarArmas(usuario);
-			System.out.println(armas6.pistolas());
-			break;
-		}
 		break;
 	case "4":
 		
+		System.out.println("1.Cambiar contraseña");
+		System.out.println("2.Cambiar nombre");
 		String opcionAjustes;
-		Scanner teclado4 = new Scanner (System.in);
-		System.out.println("1 Cambiar contraseña || 2 Cambiar nombre");
-		opcionAjustes=teclado4.next();
-		
-			switch (opcionAjustes) {
-			
-			case "1":
-				System.out.println("1 Cambiar contraseña");
-				controlAjustes contrasena = new controlAjustes();
-				contrasena.setUser(user);
-				contrasena.cambiarpassword();
-				break;
-			case "2":
-				System.out.println("2 Cambiar nombre");
-				controlAjustes nombre = new controlAjustes();
-				nombre.setUser(user);
-				nombre.cambiarNombre();
-				break;
-			}
+        Scanner teclado4 = new Scanner (System.in);
+        opcionAjustes=teclado4.next();
+        
+        switch (opcionAjustes) {
+        case "1":
+        	controlAjustes ajustes = new controlAjustes();
+    		ajustes.setUser(user);
+    		ajustes.cambiarpassword();
+        	break;
+        case "2":
+        	controlAjustes ajustes2 = new controlAjustes();
+    		ajustes2.setUser(user);
+    		ajustes2.cambiarNombre();
+        	break;
+        }
 		
 		break;
 	case "5":
 		System.out.println("Chat");
 		controlChat chat = new controlChat();
-		chat.setUsuario(user);
+		chat.setUser(user);
 		chat.cargarChat();	
 		break;
 	case "6":

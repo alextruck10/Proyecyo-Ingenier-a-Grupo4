@@ -30,7 +30,7 @@ public class controlBorrarUsuario {
 	}
 	
 	public void volver () throws IOException {
-		ficheros files = new ficheros();
+	ficheros files = new ficheros();
 	System.out.println("ACCIÓN FINALIZADA...Volviendo al menú");
 	controlAdmin controlAdmin2 = new controlAdmin();
 	controlAdmin2.menuAdmin();

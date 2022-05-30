@@ -43,37 +43,39 @@ public void editarpassword(String dni) {
 		}
 		
 	}
-	
 public void editarNombre(String dni) {
-	
-	ficheros files = new ficheros();
-	Usuario persona = files.buscarUsuarioId(dni);
 
-	if(persona!=null) {
-		
-		String nombre2 = null;
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Indica el nuevo nombre de usuario:");
-		nombre2 = sc.nextLine();
-		persona = files.leerUsuario(persona);
-		persona.setName(nombre2);
+    ficheros files = new ficheros();
+    Usuario persona = files.buscarUsuarioId(dni);
 
-		switch (persona.getUserType()) {
-			case "administrador":
-				files.escribirPersona(persona, "src/files/administradores/" + persona.getUserId() + ".jsonl");
-				break;
-			case "jugador":
-				files.escribirPersona(persona, "src/files/jugadores/" + persona.getUserId() + ".jsonl");
-				break;
-			
-		}
-		System.out.println("Nombre de usuario cambiado");
-	}else {
-		System.out.println("Error. No se ha encontrado el usuario.");
-	}
+    if(persona!=null) {
+
+        String nombre2 = null;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Indica el nuevo nombre de usuario:");
+        nombre2 = sc.nextLine();
+        persona = files.leerUsuario(persona);
+        persona.setName(nombre2);
+
+        switch (persona.getUserType()) {
+            case "administrador":
+                files.escribirPersona(persona, "src/files/administradores/" + persona.getUserId() + ".jsonl");
+                break;
+            case "jugador":
+                files.escribirPersona(persona, "src/files/jugadores/" + persona.getUserId() + ".jsonl");
+                break;
+
+        }
+        System.out.println("Nombre de usuario cambiado");
+    }else {
+        System.out.println("Error. No se ha encontrado el usuario.");
+    }
+
+}
+
 	
 }
 	
 	
+	
 
-}
