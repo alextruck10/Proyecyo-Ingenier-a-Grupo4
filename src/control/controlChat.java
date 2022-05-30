@@ -32,6 +32,8 @@ public class controlChat {
 	ficheros files = new ficheros();
 	System.out.println("ACCIÓN FINALIZADA...Volviendo al menu");
 	controlJugador controlJugador2 = new controlJugador();
+	controlJugador2.setUser(user);
+
 	controlJugador2.menuJugador();
 	}
 	public void setUser(Jugador u) {

@@ -75,6 +75,8 @@ private String armas;
 		ficheros files = new ficheros();
 		System.out.println("ACCIÓN FINALIZADA...Volviendo al menu");
 		controlJugador controlJugador1 = new controlJugador();
+		controlJugador1.setUser(user);
+
 		controlJugador1.menuJugador();
 		}
 	

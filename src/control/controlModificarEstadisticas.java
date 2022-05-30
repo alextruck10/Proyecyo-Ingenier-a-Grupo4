@@ -43,6 +43,8 @@ public class controlModificarEstadisticas {
 		ficheros files = new ficheros();
 	System.out.println("ACCIÓN FINALIZADA...Volviendo al menu");
 	controlAdmin controlAdmin1 = new controlAdmin();
+	controlAdmin1.setUsuario(user);
+
 	controlAdmin1.menuAdmin();		
 	}
 	public void setUser(Administrador user) {

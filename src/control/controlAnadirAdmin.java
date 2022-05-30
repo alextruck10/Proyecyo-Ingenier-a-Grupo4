@@ -80,6 +80,8 @@ public class controlAnadirAdmin {
 		ficheros files = new ficheros();
 	System.out.println("ACCIÓN FINALIZADA...Volviendo al menu");
 	controlAdmin controlAdmin2 = new controlAdmin();
+	controlAdmin2.setUsuario(user);
+
 	controlAdmin2.menuAdmin();
 	}
 	

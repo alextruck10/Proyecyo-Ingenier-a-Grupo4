@@ -110,8 +110,8 @@ public class controlJugador {
 	}
 	
 	
-	 public void setUsuario(Jugador u) {
-	    	user = u;
+	 public void setUser(Jugador u) {
+	    	this.user = u;
 	    	
 
 	    }

@@ -48,7 +48,7 @@ public class controlLogin {
 			case "jugador":
 				System.out.println("Bienvenido " + usuario.getName());
 				controlJugador controlJugador1 = new controlJugador();
-				controlJugador1.setUsuario(files.leerJugador("src/files/jugadores/" + usuario.getUserId() + ".jsonl"));
+				controlJugador1.setUser(files.leerJugador("src/files/jugadores/" + usuario.getUserId() + ".jsonl"));
 				controlJugador1.menuJugador();				
 								
 				break;
