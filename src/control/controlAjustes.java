@@ -18,7 +18,7 @@ public class controlAjustes {
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Id del usuario: ");
-        idText=sc.nextLine();
+        idText=user.getUserId();
         System.out.println(idText);
         System.out.println(user.getName());
         user.editarpassword(idText);
@@ -34,7 +34,7 @@ void cambiarNombre() throws IOException {
 
     Scanner sc = new Scanner(System.in);
     System.out.println("Id del usuario: ");
-    idText=sc.nextLine();
+    idText=user.getUserId();
     System.out.println(idText);
     System.out.println(user.getName());
     user.editarNombre(idText);

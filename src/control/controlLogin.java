@@ -27,12 +27,15 @@ public class controlLogin {
 
 	private void init() {
 		 
-		properties.put("mail.smtp.host", "mail.gmail.com");
-		properties.put("mail.smtp.starttls.enable", "true");
-		properties.put("mail.smtp.port",25);
-		properties.put("mail.smtp.mail.sender","tributestats@gmail.com");
-		properties.put("mail.smtp.user", "tributestats@gmail.com");
-		properties.put("mail.smtp.auth", "true");
+		properties.put("mail.smtp.host", "smtp.gmail.com");
+        properties.put("mail.smtp.starttls.enable", "true");
+        properties.put("mail.smtp.port",465);
+        properties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+        properties.put("mail.smtp.mail.sender","tributestats@gmail.com");
+        properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+        properties.put("mail.smtp.socketFactory.fallback","false");
+        properties.put("mail.smtp.user", "tributestats");
+        properties.put("mail.smtp.auth", "true");
 		
 		session = Session.getDefaultInstance(properties);
 	}
@@ -61,7 +64,7 @@ public class controlLogin {
 		Usuario usuario = files.IniciarSesion(userNameText, passwordText);
 		if(usuario!=null) {
 			String rol = usuario.getUserType();
-			//sendEmail();
+			sendEmail();
 			switch (rol) {
 			case "administrador":
 				if(entra.equals(usuario.active)) {

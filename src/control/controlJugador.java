@@ -40,8 +40,7 @@ public class controlJugador {
 	System.out.println("2.% Victorias/Derrotas\n");
 	System.out.println("3.Armas\n");
 	System.out.println("4.Ajustes\n");
-	System.out.println("5.Chat\n");
-	System.out.println("6.Cerrar sesión\n");
+	System.out.println("5.Cerrar sesión\n");
 		
 
 
@@ -90,13 +89,8 @@ public class controlJugador {
         }
 		
 		break;
+	
 	case "5":
-		System.out.println("Chat");
-		controlChat chat = new controlChat();
-		chat.setUser(user);
-		chat.cargarChat();	
-		break;
-	case "6":
 		System.out.println("Hasta pronto"+user.getName());
 		controlLogin controlLogin1 = new controlLogin();
 		controlLogin1.comprobarLogin();
