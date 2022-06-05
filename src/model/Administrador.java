@@ -18,7 +18,7 @@ public class Administrador extends Usuario {
 		
 		ficheros files = new ficheros();
 		Usuario persona = files.buscarUsuarioId(dni);
-		System.out.println("xdddd");
+		
 		if(persona!=null) {
 			files.eliminarUsuarioLogin(persona.getEmail());
 			//files.eliminarUsuarioArmas(persona.getUserId());
@@ -52,14 +52,7 @@ public void suspenderUser(String dni) {
 			
 
 			persona = files.leerUsuario(persona);
-			/*System.out.println("¿Desea activar un usuario (1) o suspenderlo (2)?");
-			Scanner sc = new Scanner(System.in);
-			String opcionactivo = sc.nextLine();
-			if (opcionactivo == "1") {
-				persona.setActive(true);
-			} else if (opcionactivo == "2") {
-				persona.setActive(false);
-			}*/
+			
 			persona.setActive(false);
 
 			

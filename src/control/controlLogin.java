@@ -11,7 +11,7 @@ public class controlLogin {
 	private String userNameText;
 
 	private String passwordText;
-	
+	private Boolean entra=true;
 
 	public void comprobarLogin() throws IOException {
 		try
@@ -39,18 +39,28 @@ public class controlLogin {
 			String rol = usuario.getUserType();
 			switch (rol) {
 			case "administrador":
-				System.out.println("Bienvenido " + usuario.getName());
+				if(entra.equals(usuario.active)) {
+					System.out.println("Bienvenido " + usuario.getName());
 				controlAdmin controlAdmin1 = new controlAdmin();
 				controlAdmin1.setUsuario(files.leerAdministrador("src/files/administradores/" + usuario.getUserId() + ".jsonl"));
 				controlAdmin1.menuAdmin();
+				}else {
+					System.out.println("SU CUENTA SE ENCUENTRA EN ESTE MOMENTO SUSPENDIDA");
+					return;
+				}
+				
 								
 				break;
 			case "jugador":
+				if(entra.equals(usuario.active)) {
 				System.out.println("Bienvenido " + usuario.getName());
 				controlJugador controlJugador1 = new controlJugador();
 				controlJugador1.setUser(files.leerJugador("src/files/jugadores/" + usuario.getUserId() + ".jsonl"));
 				controlJugador1.menuJugador();				
-								
+				}else {
+					System.out.println("SU CUENTA SE ENCUENTRA EN ESTE MOMENTO SUSPENDIDA");
+					return;
+				}		
 				break;
 				
 			}

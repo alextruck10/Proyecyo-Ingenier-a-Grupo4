@@ -1,5 +1,7 @@
 package model;
 
+import aplication.ficheros;
+
 public class Armas{
 
 	private String userId;
@@ -26,6 +28,25 @@ public class Armas{
 		this.pistolas = pistolas;
 	}
 
+public void borrarArmas(String dni) {
+		
+		ficheros files = new ficheros();
+		Armas arma = files.buscarArmas(dni);
+		
+		if(arma!=null) {
+		
+			files.eliminarUsuarioArmas(arma.getUserId());
+			//files.eliminarUsuarioModos(persona.getUserId());
+
+			System.out.println("Arma borrada");
+			
+			
+		}else {
+			System.out.println("No hemos encontrado las armas del usuario");
+		}
+		
+	}
+	
 	public String getUserId() {
 		return userId;
 	}

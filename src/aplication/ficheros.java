@@ -110,6 +110,20 @@ public class ficheros {
 		return persona;
 	}
 	
+	public Armas leerArmas(String ruta) {
+		Armas arma = null;
+		try {
+			Gson gson = new Gson();
+			BufferedReader br = new BufferedReader(new FileReader(ruta));
+			arma = gson.fromJson(br.readLine(), Armas.class);
+			br.close();
+		} catch (IOException ex) {
+			System.out.println(ex.getMessage());
+		}
+		return arma;
+	}
+	
+	
 	public Usuario leerUsuarioLogin(String ruta) {
 		Usuario persona = null;
 		try {
@@ -142,6 +156,35 @@ public class ficheros {
 			BufferedWriter bw = new BufferedWriter(new FileWriter("src/files/login.jsonl", true));
 			bw.newLine();
 			bw.append(gson.toJson(user));
+			bw.flush();
+			bw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	public void escribirArmas(Armas arma) {
+		
+		Gson gson = new Gson();
+		
+		try {
+			BufferedWriter bw = new BufferedWriter(new FileWriter("src/files/armas.jsonl", true));
+			bw.newLine();
+			bw.append(gson.toJson(arma));
+			bw.flush();
+			bw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void escribirModos(Modos modo) {
+		
+		Gson gson = new Gson();
+		
+		try {
+			BufferedWriter bw = new BufferedWriter(new FileWriter("src/files/modos.jsonl", true));
+			bw.newLine();
+			bw.append(gson.toJson(modo));
 			bw.flush();
 			bw.close();
 		} catch (IOException e) {
@@ -258,7 +301,7 @@ public class ficheros {
 		
 		public boolean eliminarUsuarioArmas(String dni) {
 			Gson gson = new Gson();
-			Usuario persona = null;
+			Armas arma = null;
 			File ficheroViejo = new File("src/files/armas.jsonl");
 			File ficheroNuevo = new File("src/files/armas2.jsonl");
 			try {
@@ -267,9 +310,9 @@ public class ficheros {
 
 				String linea;
 				while ((linea = br.readLine()) != null) {
-					persona = gson.fromJson(linea, Usuario.class);
-					if (!persona.getUserId().equalsIgnoreCase(dni)) {
-						bw.append(gson.toJson(persona));
+					arma = gson.fromJson(linea, Armas.class);
+					if (!arma.getUserId().equalsIgnoreCase(dni)) {
+						bw.append(gson.toJson(arma));
 						bw.flush();
 						bw.newLine();
 					}
@@ -297,7 +340,7 @@ public class ficheros {
 		
 		public boolean eliminarUsuarioModos(String dni) {
 			Gson gson = new Gson();
-			Usuario persona = null;
+			Modos modo = null;
 			File ficheroViejo = new File("src/files/modos.jsonl");
 			File ficheroNuevo = new File("src/files/modos2.jsonl");
 			try {
@@ -306,9 +349,9 @@ public class ficheros {
 
 				String linea;
 				while ((linea = br.readLine()) != null) {
-					persona = gson.fromJson(linea, Usuario.class);
-					if (!persona.getUserId().equalsIgnoreCase(dni)) {
-						bw.append(gson.toJson(persona));
+					modo = gson.fromJson(linea, Modos.class);
+					if (!modo.getUserId().equalsIgnoreCase(dni)) {
+						bw.append(gson.toJson(modo));
 						bw.flush();
 						bw.newLine();
 					}
@@ -366,29 +409,7 @@ public class ficheros {
 			}
 		}
 		
-		/*public Armas datosArmas(String userId) {
-			
-			Armas armas = buscarArmas(userId);
-
-			if (armas != null && armas.getUserId().equals(userId)) {
-				return leerDatosArmas(armas);
-			} else {
-				return null;
-			}
-		}*/
 		
-		/*public Armas leerDatosArmas(String ruta) {
-			Armas armas = null;
-			try {
-				Gson gson = new Gson();
-				BufferedReader br = new BufferedReader(new FileReader(ruta));
-				armas = gson.fromJson(br.readLine(), Armas.class);
-				br.close();
-			} catch (IOException ex) {
-				System.out.println(ex.getMessage());
-			}
-			return armas;
-		}*/
 		public Modos buscarModos(String dni) {
 			Gson gson = new Gson();
 			Modos modos = null;
@@ -416,34 +437,6 @@ public class ficheros {
 			}
 		}
 		
-		public void escribirArmas(Armas arma) {
-			
-			Gson gson = new Gson();
-			
-			try {
-				BufferedWriter bw = new BufferedWriter(new FileWriter("src/files/armas.jsonl", true));
-				bw.newLine();
-				bw.append(gson.toJson(arma));
-				bw.flush();
-				bw.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
 		
-		public void escribirModos(Modos modo) {
-			
-			Gson gson = new Gson();
-			
-			try {
-				BufferedWriter bw = new BufferedWriter(new FileWriter("src/files/modos.jsonl", true));
-				bw.newLine();
-				bw.append(gson.toJson(modo));
-				bw.flush();
-				bw.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
 		
 }

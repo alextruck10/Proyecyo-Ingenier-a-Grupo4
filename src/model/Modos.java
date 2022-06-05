@@ -1,5 +1,7 @@
 package model;
 
+import aplication.ficheros;
+
 public class Modos {
 	private String userId;
 	private int mododuelowins;
@@ -23,6 +25,25 @@ public class Modos {
 		this.mododominiototal = mododominiototal;
 		this.modocalientewins = modocalientewins;
 		this.modocalientetotal = modocalientetotal;
+	}
+	
+public void borrarModos(String dni) {
+		
+		ficheros files = new ficheros();
+		Modos modo = files.buscarModos(dni);
+		
+		if(modo!=null) {
+		
+			files.eliminarUsuarioModos(modo.getUserId());
+			//files.eliminarUsuarioModos(persona.getUserId());
+
+			System.out.println("Modos borrados");
+			
+			
+		}else {
+			System.out.println("No hemos encontrado los modos del usuario");
+		}
+		
 	}
 	public String getUserId() {
 		return userId;
