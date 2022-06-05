@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="recursos/gson-2.8.0.jar"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+			<attribute name="limit-modules" value="java.se,jdk.accessibility,jdk.dynalink,jdk.httpserver,jdk.jartool,jdk.javadoc,jdk.jconsole,jdk.jshell,jdk.jsobject,jdk.management.jfr,jdk.net,jdk.nio.mapmode,jdk.sctp,jdk.security.auth,jdk.security.jgss,jdk.unsupported,jdk.unsupported.desktop,jdk.xml.dom,jdk.charsets,jdk.hotspot.agent,jdk.internal.vm.ci,jdk.jstatd,jdk.jcmd,jdk.crypto.cryptoki,jdk.naming.rmi,jdk.zipfs,jdk.editpad,java.smartcardio,jdk.jpackage,jdk.naming.dns,jdk.localedata"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="recursos/gson-2.8.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/ismael/Desktop/JairoProyect/Proyectobueno/Proyecyo-Ingenieria-Grupo4/recursos/javax.activation-1.2.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/ismael/Desktop/JairoProyect/Proyectobueno/Proyecyo-Ingenieria-Grupo4/recursos/javax.mail.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
